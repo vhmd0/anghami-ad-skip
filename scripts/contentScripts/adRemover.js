@@ -196,3 +196,6 @@ function hideItems(items) {
     item.style.display = "none";
   });
 }
+
+// Make optimizePage function available globally for Brave compatibility
+window.optimizePage = optimizePage;

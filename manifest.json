@@ -1,10 +1,11 @@
 {
   "name": "Anghami ads remover",
-  "version": "1.2",
+  "version": "1.3",
   "description": "This extension will remove the popup ads that interrupt music and remove Google ads inside the app. It will also press play after removing the ads.",
   "manifest_version": 3,
 
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://play.anghami.com/*"],
 
   "background": {
     "service_worker": "background.js"
@@ -14,7 +15,8 @@
     {
       "matches": ["https://play.anghami.com/*"],
       "js": ["./scripts/contentScripts/adRemover.js"],
-      "run_at": "document_end"
+      "run_at": "document_end",
+      "all_frames": true
     }
   ]
 }
